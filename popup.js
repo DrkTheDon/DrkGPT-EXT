@@ -5,8 +5,7 @@
 // Coded by: drk, DragonSlayer64                   //
 /////////////////////////////////////////////////////
 
-import { OpenAIApi } from "openai";
-import axios from "axios";
+const { Configuration, OpenAIApi } = require("openai");
 
 // consts
 const errors= document.querySelector(".errors");
@@ -28,26 +27,36 @@ const openai = new OpenAIApi(configuration);
 
 const completionFunction = async userPrompt => {
     loading.style.display = "block";
-    errors.textContent = "";
+    errors.textContent = "error";
     try {
-        const response = await axios.get(`${api}/${userprompt}`)
-        loading.style.display = "none";
-        
-
+        const response = fetch(api, {
+            method: "POST",
+            data: JSON.stringify({
+              model: "text-davinci-003",
+              prompt: userprompt.value,
+              temprature: 0,
+              max_tokens: 2048,
+            }),
+            headers: {
+              "Authorization": `Bearer ${apiKey}`,
+              "Content-type": "application/json; charset=UTF-8"
+            }
+                   
+          })
+            console.log(response.json)
     } catch (error) {
         loading.style.display = "none";
         output.style.display = "none";
         errors.textContent = "Something went wrong.";
     }
-
+    output.textContent = response.choices.text
 };
   
 // generatedanswer = console.log(completion.data.choices[0].text);
 const handleSubmit = async e => {
     e.preventDefault();
-    completionFunction(userprompt.value);
-    console.log(generatedanswer);
+    completionFunction();
+    console.log(response.text);
 
 };
-form.addEventListener("submit", e => handleSubmit(e));
-
+form.addEventListener("postprompt", e => handleSubmit(e));
