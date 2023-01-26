@@ -13,8 +13,6 @@ I will upload compressed versions of DrkGPT-EXT so that it will be easier, but t
 git clone https://github.com/DrkTheDon/DrkGPT-EXT.git
 cd DrkGPT-EXT/
 npm install openai
-npm install prompt-sync
-npm install express
 npm install axios
 npm update
 -----
