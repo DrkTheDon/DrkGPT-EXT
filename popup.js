@@ -5,8 +5,7 @@
 // Coded by: drk, DragonSlayer64                   //
 /////////////////////////////////////////////////////
 import { OpenAIApi } from "openai";
-
-const prompt = require("prompt-sync")();
+import axios from "axios";
 
 // consts
 const errors= document.querySelector(".errors");
@@ -15,29 +14,38 @@ const output = document.querySelector(".output");
 const results = document.querySelector(".result-container");
 results.style.display = "none";
 loading.style.display = "none";
-
 const form = document.querySelector(".form-data");
 const userprompt = document.querySelector(".userPrompt");
 
-const configuration = new Configuration({
-  apiKey: "",
-});
+
+var apiKey = "API_KEY";
+
 
 
 //api,post
 const openai = new OpenAIApi(configuration);
 
-const completionFunction = async () => {
-  const completion = await openai.createCompletion({
-    model: "text-davinci-002",
-    prompt: userprompt,
-  });
+const completionFunction = async userPrompt => {
+    loading.style.display = "block";
+    errors.textContent = "";
+    try {
+        const response = await axios.get(`${api}/${userprompt}`)
+        loading.style.display = "none";
+        
+        
 
-  generatedanswer = console.log(completion.data.choices[0].text);
+    } catch (error) {
+        loading.style.display = "none";
+        output.style.display = "none";
+        errors.textContent = "Something went wrong.";
+    }
+
 };
+  
+// generatedanswer = console.log(completion.data.choices[0].text);
 const handleSubmit = async e => {
     e.preventDefault();
-    completionFunction();
+    completionFunction(userprompt.value);
     console.log(generatedanswer);
 
 };
