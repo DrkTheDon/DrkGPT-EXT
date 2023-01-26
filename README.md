@@ -5,7 +5,18 @@ DrkGPT writes it for you. Teachers wont see the copy pasting! Now as a browser e
 Teachers nowadays use draftback to see if you copy or pasted. DrkGPT writes the essay for you at a designated speed, pausing now and then making your writing more trustworthy.
 
 ## Installation/Usage
-
+### Extension Download
+```
+git clone https://github.com/DrkTheDon/DrkGPT-EXT.git
+cd DrkGPT-EXT/
+npm install openai
+npm install prompt-sync
+npm install express
+npm install axios
+npm update
+-----
+Then add extension into browser.
+```
 ### API USAGE
 In order to use **DrkGPT** you need an **API access key**. Enter [API KEYS](https://beta.openai.com/account/api-keys) and create a secret key
 
