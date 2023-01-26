@@ -1,0 +1,15 @@
+{
+    "name": "DrkGPT",
+    "version": "0.1",
+    "description": "DrkGPT writes it for you. Teachers wont see the copy pasting! Now as a browser extension!",
+    "permissions": [],
+    "host_permissions": [],
+    "manifest_version": 3,
+    
+    "action": {
+      "default_icon": "./img/logo.svg",
+      "default_popup": "./src/popup.html",
+      "default_title": "Start DrkGPT"
+      }
+    
+  }
