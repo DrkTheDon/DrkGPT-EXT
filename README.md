@@ -1,6 +1,7 @@
 # DrkGPT-EXT
 DrkGPT uses the GPT 3.1 API to generate an answer to your question. 
 DrkGPT writes it for you. Teachers wont see the copy pasting! Now as a browser extension!
+
 Teachers nowadays use draftback to see if you copy or pasted. DrkGPT writes the essay for you at a designated speed, pausing now and then making your writing more trustworthy.
 
 ## Installation/Usage
