@@ -4,14 +4,23 @@
 // https://drkbro.ml/                              //
 // Coded by: drk, DragonSlayer64                   //
 /////////////////////////////////////////////////////
+import { OpenAIApi } from "openai";
 
-const express = require("express");
-const app = express();
-const { Configuration, OpenAIApi } = require("openai");
 const prompt = require("prompt-sync")();
 
+// consts
+const errors= document.querySelector(".errors");
+const loading = document.querySelector(".loading");
+const output = document.querySelector(".output");
+const results = document.querySelector(".result-container");
+results.style.display = "none";
+loading.style.display = "none";
+
+const form = document.querySelector(".form-data");
+const userprompt = document.querySelector(".userPrompt");
+
 const configuration = new Configuration({
-  apiKey: "Your Api code",
+  apiKey: "",
 });
 
 
@@ -21,14 +30,16 @@ const openai = new OpenAIApi(configuration);
 const completionFunction = async () => {
   const completion = await openai.createCompletion({
     model: "text-davinci-002",
-    prompt: "what is the capital of germany?",
+    prompt: userprompt,
   });
 
-  console.log(completion.data.choices[0].text);
+  generatedanswer = console.log(completion.data.choices[0].text);
 };
+const handleSubmit = async e => {
+    e.preventDefault();
+    completionFunction();
+    console.log(generatedanswer);
 
+};
+form.addEventListener("submit", e => handleSubmit(e));
 
-//prompt,request
-const userQuestion = prompt("Enter a prompt: ");
-completionFunction(userQuestion);
-console.log("Generating Answer, this might take some time.")
