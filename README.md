@@ -12,9 +12,7 @@ I will upload compressed versions of DrkGPT-EXT so that it will be easier, but t
 ```
 git clone https://github.com/DrkTheDon/DrkGPT-EXT.git
 cd DrkGPT-EXT/
-npm install openai
-npm install axios
-npm update
+npm install
 -----
 Then add extension into browser.
 ```
