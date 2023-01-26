@@ -5,6 +5,7 @@ DrkGPT writes it for you. Teachers wont see the copy pasting! Now as a browser e
 Teachers nowadays use draftback to see if you copy or pasted. DrkGPT writes the essay for you at a designated speed, pausing now and then making your writing more trustworthy.
 
 ## Installation/Usage
+I will upload compressed versions of DrkGPT-EXT so that it will be easier, but to donwload and set it up manually you will have to:
 ### Extension Download
 ```
 git clone https://github.com/DrkTheDon/DrkGPT-EXT.git
