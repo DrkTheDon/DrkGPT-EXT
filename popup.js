@@ -4,6 +4,7 @@
 // https://drkbro.ml/                              //
 // Coded by: drk, DragonSlayer64                   //
 /////////////////////////////////////////////////////
+
 import { OpenAIApi } from "openai";
 import axios from "axios";
 
@@ -19,7 +20,7 @@ const userprompt = document.querySelector(".userPrompt");
 
 
 var apiKey = "API_KEY";
-
+var api = "https://api.openai.com/v1/completion";
 
 
 //api,post
@@ -31,7 +32,6 @@ const completionFunction = async userPrompt => {
     try {
         const response = await axios.get(`${api}/${userprompt}`)
         loading.style.display = "none";
-        
         
 
     } catch (error) {
