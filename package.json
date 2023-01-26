@@ -1,7 +1,7 @@
 {
-  "name": "drkgpt",
-  "version": "0.0.1",
-  "description": "",
+  "name": "drkgpt-ext",
+  "version": "0.1",
+  "description": "DrkGPT writes it for you. Teachers wont see the copy pasting! Now as a browser extension!",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts-start",
