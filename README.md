@@ -6,7 +6,7 @@ Teachers nowadays use draftback to see if you copy or pasted. DrkGPT writes the 
 
 ## Installation/Usage
 I will upload compressed versions of DrkGPT-EXT so that it will be easier, but to donwload and set it up manually you will have to:
-### Extension Download
+### Manual Extension Download
 ```
 git clone https://github.com/DrkTheDon/DrkGPT-EXT.git
 cd DrkGPT-EXT/
